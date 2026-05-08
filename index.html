@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2048 — Classic</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <div class="brand">
+        <h1>2048</h1>
+        <p class="sub">Join tiles. Get to <b>2048</b>. Try not to rage quit.</p>
+      </div>
+
+      <div class="scores">
+        <div class="scorebox">
+          <div class="label">SCORE</div>
+          <div id="score" class="value">0</div>
+        </div>
+        <div class="scorebox">
+          <div class="label">BEST</div>
+          <div id="best" class="value">0</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="controls">
+      <button id="newGameBtn" class="btn">New Game</button>
+      <button id="undoBtn" class="btn btn-ghost" title="Undo last move">Undo</button>
+
+      <div class="hint">
+        <span class="kbd">←</span><span class="kbd">↑</span><span class="kbd">→</span><span class="kbd">↓</span>
+        <span class="sep">or</span>
+        <span class="kbd">W</span><span class="kbd">A</span><span class="kbd">S</span><span class="kbd">D</span>
+      </div>
+    </section>
+
+    <section class="boardWrap">
+      <div class="boardTop">
+        <p id="status" class="status">Good luck. You got this.</p>
+      </div>
+
+      <div class="board" id="board" aria-label="2048 board">
+        <!-- cells & tiles are rendered by JS -->
+      </div>
+
+      <div id="overlay" class="overlay hidden" role="dialog" aria-modal="true">
+        <div class="overlayCard">
+          <h2 id="overlayTitle">Game Over</h2>
+          <p id="overlayText">Welp. That was… something.</p>
+          <div class="overlayActions">
+            <button id="tryAgainBtn" class="btn">Try Again</button>
+            <button id="keepPlayingBtn" class="btn btn-ghost hidden">Keep Playing</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p>
+        Tip: corners are your friends. Also, don’t trust corners too much.
+      </p>
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
